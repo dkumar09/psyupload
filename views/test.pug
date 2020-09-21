@@ -3,4 +3,14 @@ html
 head
     title='Psyupload'
 body
-    p.greetings#hello 'Hello bois wassup wassup'
+    form(action = "/upload", method = "POST",enctype="multipart/form-data")
+         div
+            label(for = "say") Say:
+            input(name = "uploadedFile", type="file")
+         br
+         br
+         button(type = "submit") Upload
+    ul
+        each val in list
+            a(href="../root/"+val)
+                li= val
